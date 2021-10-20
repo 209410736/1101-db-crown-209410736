@@ -1,28 +1,28 @@
-const { Pool} = require('pg');
+const { Pool } = require('pg');
 
-const isProduction = process.env.NODE_ENV ==="production"
+const isProduction = process.env.NODE_ENV === "production"
 
 
 let pool;
 
-if(isProduction){
-  pool= new pool({
+if (isProduction) {
+  pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl:{ rejectUnauthorized:false},
+    ssl: { rejectUnauthorized: false },
   });
 } else {
-  pool= new pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'crown_36',
-  password: '0000',
-  port: 5432,
+  pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'crown_36',
+    password: '0000',
+    port: 5432,
   })
 }
 
-//pool.query('SELECT * from category_36', (err, res) => {
-    //console.log(JSON.stringify(res.rows));
-    //pool.end();
- // })
+pool.query('SELECT * from category_36', (err, res) => {
+  console.log(JSON.stringify(res.rows));
+  pool.end();
+})
 
 module.exports = pool;
