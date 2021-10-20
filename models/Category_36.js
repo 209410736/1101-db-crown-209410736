@@ -23,10 +23,10 @@ const Category_36 = class Category_36 {
 };
 
 
-const test = async () => {
+/*const test = async () => {
     let results = await Category_36.fetchAll();
     console.log('results', JSON.stringify(results.rows));
 }
 
-test();
+test();*/
 module.exports = Category_36;
