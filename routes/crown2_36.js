@@ -1,13 +1,9 @@
 var express = require('express');
 var router = express.Router();
-
+const crown2Controller_36 = require('../controllers/crown2Controller_36');
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('crown2_36', {
-        title: 'crown2_36',
-        name: 'Xiwei SUN',
-        id: '209410736',
-    });
-});
+router.get('/', crown2Controller_36.getCategories);
 
 module.exports = router;
+
+

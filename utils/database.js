@@ -19,10 +19,10 @@ if (isProduction) {
     port: 5432,
   })
 }
-
+/*
 pool.query('SELECT * from category_36', (err, res) => {
   console.log(JSON.stringify(res.rows));
   pool.end();
 })
-
+*/
 module.exports = pool;

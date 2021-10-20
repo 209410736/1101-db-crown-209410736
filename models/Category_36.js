@@ -1,4 +1,4 @@
-const { json } = require('express');
+
 const db = require('../utils/database');
 
 const Category_36 = class Category_36 {
